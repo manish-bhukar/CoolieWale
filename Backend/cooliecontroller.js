@@ -1,14 +1,14 @@
 import mongoose from "mongoose";
 import { Schema } from "./coolieschema.js";
 export const cooliecontroller=async(req,res)=>{
-    const { name, rating, badgenumber, contactnumber, experience, pic, location } = req.body;
+    const { name, rating, badgenumber, contactnumber, experience, location } = req.body;
 
     try {
-        if (!name || !rating || !badgenumber || !contactnumber || !experience || !pic || !location) {
+        if (!name || !rating || !badgenumber || !contactnumber || !experience  || !location) {
             return res.status(400).json({ error: "Please provide full details" });
         }
     
-        const user = await Schema.create({ name, rating, badgenumber, contactnumber, experience, pic, location });
+        const user = await Schema.create({ name, rating, badgenumber, contactnumber, experience, location });
        
         
             if (user) {
@@ -20,7 +20,6 @@ export const cooliecontroller=async(req,res)=>{
                 badgenumber: user.badgenumber,
                 contactnumber: user.contactnumber,
                 experience: user.experience,
-                pic: user.pic,
                 location: user.location
             });
         } else {
