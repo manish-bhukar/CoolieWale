@@ -33,7 +33,7 @@ const PostForm = () => {
                 contactnumber: contactnumber,
                 experience: experience,
                 location: location,
-                picURL: downloadURL
+                pic: downloadURL
             };
 
             const response = await fetch('http://localhost:2000/user/', {

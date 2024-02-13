@@ -5,6 +5,10 @@ const coolieSchema = new mongoose.Schema({
   badgenumber: { type: String, required: true },
   contactnumber: { type: String, required: true },
   experience: { type: String, required: true },
+  pic: {
+    type: "String",
+    required: true,
+  },
   location:{
     type:"String",
     required:true
